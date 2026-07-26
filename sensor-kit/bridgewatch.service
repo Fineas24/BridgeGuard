@@ -1,0 +1,16 @@
+[Unit]
+Description=BridgeWatch Sensor Server (receiver date Pico W)
+After=network.target
+
+[Service]
+Type=simple
+User=admin
+WorkingDirectory=/home/admin/test_pico
+ExecStart=/usr/bin/python3 /home/admin/test_pico/server.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=BridgeGuard Greutate + Distanta + Semafor
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/www/html/proiect/Python
+ExecStart=/usr/bin/python3 /var/www/html/proiect/Python/G+D+S.py
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

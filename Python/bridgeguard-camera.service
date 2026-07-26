@@ -1,0 +1,16 @@
+[Unit]
+Description=BridgeGuard Camera Server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/www/html/proiect/Python
+EnvironmentFile=/var/www/html/proiect/Python/.env
+ExecStart=/usr/bin/python3 /var/www/html/proiect/Python/camera_server.py
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
